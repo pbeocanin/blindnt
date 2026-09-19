@@ -6,23 +6,59 @@
 html, body, #a-page, .a-container, #dp, #dp-container, #ppd, #centerCol, #leftCol, #rightCol,
 #desktop-grid-1, #desktop-grid-2, #desktop-grid-3, #desktop-grid-4, #desktop-grid-5,
 #search, .s-desktop-width-max, .s-main-slot, #gw-desktop-herotator, .gw-card-layout,
-#sc-active-cart, .sc-list-body, #sc-buy-box, .a-section:not(.a-color-base-background) {
+#sc-active-cart, .sc-list-body, #sc-buy-box, .a-section:not(.a-color-base-background):not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *) {
   background-color: #121212 !important;
   color: #e6e6e6 !important;
 }
 
 /* Cards / boxes / panels */
-.a-box, .a-box-inner, .a-box-group, .a-cardui, .a-cardui-body, .a-cardui-header, .a-cardui-footer,
-.s-card-container, .s-result-item .puis-card-container, .s-card-border, .sc-list-item-content,
-.a-color-base-background, .a-color-offset-background, .a-color-alternate-background,
-.a-color-secondary-background, .a-color-tertiary-background, .a-carousel-card,
-.celwidget .a-box, #buybox, #buyBoxAccordion, .a-accordion-inner, .a-accordion-row,
-#reviewsMedley .a-box, .review, .a-popover, .a-popover-inner, .a-popover-content,
-.a-dropdown-container, .a-dropdown-prompt, #nav-flyout-accountList, .nav-flyout-body,
-.nav-flyout-content, #nav-flyout-cart, .a-modal-scroller .a-popover-modal,
-[class*="fluid-image-container"], .card-lite, .octopus-pc-card, .octopus-pc-card-content,
-#hqp_root, .desktop-grid-item, .a-list-item .a-box, .sc-buy-box-inner-wrapper, .sc-cart-wrapper,
-.rhf-frame, .a-widget-container, .ap-widget, #nav-subnav .nav-a {
+.a-box:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-box-inner:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-box-group:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-cardui:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-cardui-body:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-cardui-header:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-cardui-footer:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.s-card-container:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.s-result-item .puis-card-container:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.s-card-border:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.sc-list-item-content:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-color-base-background:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-color-offset-background:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-color-alternate-background:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-color-secondary-background:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-color-tertiary-background:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-carousel-card:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.celwidget .a-box:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#buybox:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#buyBoxAccordion:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-accordion-inner:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-accordion-row:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#reviewsMedley .a-box:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.review:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-popover:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-popover-inner:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-popover-content:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-dropdown-container:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-dropdown-prompt:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#nav-flyout-accountList:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.nav-flyout-body:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.nav-flyout-content:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#nav-flyout-cart:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-modal-scroller .a-popover-modal:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+[class*="fluid-image-container"]:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.card-lite:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.octopus-pc-card:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.octopus-pc-card-content:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#hqp_root:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.desktop-grid-item:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-list-item .a-box:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.sc-buy-box-inner-wrapper:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.sc-cart-wrapper:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.rhf-frame:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-widget-container:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.ap-widget:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#nav-subnav .nav-a:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *) {
   background-color: #1c1c1e !important;
   color: #e6e6e6 !important;
   border-color: #333 !important;
@@ -41,10 +77,39 @@ html, body, #a-page, .a-container, #dp, #dp-container, #ppd, #centerCol, #leftCo
 }
 
 /* Text */
-body, p, span, div, li, td, th, label, h1, h2, h3, h4, h5, h6, .a-text-normal, .a-size-base,
-.a-size-small, .a-size-mini, .a-size-medium, .a-size-large, .a-color-base, .a-text-bold,
-.a-truncate, .a-truncate-cut, .a-truncate-full, .a-list-item, .a-carousel-heading,
-.a-cardui-header h2, #productTitle, #title, .s-result-item h2, .sc-product-title {
+/* :not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *) — homepage hero tiles pick their own text colour per artwork */
+body:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+p:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+span:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+div:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+li:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+td:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+th:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+label:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+h1:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+h2:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+h3:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+h4:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+h5:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+h6:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-text-normal:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-size-base:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-size-small:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-size-mini:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-size-medium:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-size-large:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-color-base:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-text-bold:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-truncate:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-truncate-cut:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-truncate-full:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-list-item:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-carousel-heading:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-cardui-header h2:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#productTitle:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+#title:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.s-result-item h2:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.sc-product-title:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *) {
   color: #e6e6e6 !important;
 }
 .a-color-secondary, .a-color-tertiary, .a-text-italic, .sc-product-variation, .a-size-mini.a-color-secondary,
@@ -52,9 +117,15 @@ body, p, span, div, li, td, th, label, h1, h2, h3, h4, h5, h6, .a-text-normal, .
 .nav-flyout-body .nav-text, small, .a-declarative small, #productDetails_techSpec_section_1 th {
   color: #a1a1a6 !important;
 }
-a, .a-link-normal, .a-link-emphasis, .a-link-normal:visited, .s-underline-text,
-.s-underline-link-text, .a-link-normal .a-text-bold { color: #6cb6ff !important; }
-a:hover, .a-link-normal:hover { color: #9dd0ff !important; }
+a:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-link-normal:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-link-emphasis:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-link-normal:visited:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.s-underline-text:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.s-underline-link-text:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-link-normal .a-text-bold:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *) { color: #6cb6ff !important; }
+a:hover:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *),
+.a-link-normal:hover:not(.gwm-window-tile *, [class*="wd-backdrop"] *, [class*="creative-card_"] *, [class*="video-card_"] *) { color: #9dd0ff !important; }
 .a-color-price, .a-price, .a-price .a-price-whole, .a-price .a-price-fraction, .a-price-symbol,
 .sc-product-price, .a-color-price .a-price { color: #ffb15c !important; }
 .a-color-success, .a-color-state.a-text-bold { color: #5bd16f !important; }
@@ -202,4 +273,32 @@ tr:nth-child(even) td, .a-keyvalue tr:nth-child(even) td { background-color: #1a
 #sp-cc, #sp-cc-container, .sp-cc-container, #sp-cc-splash, .sp-cc-splash, .sp-cc-content, .sp-cc-text,
 #sp-cc-content, .sp-cc-buttons, #sp-cc-buttons, .sp-cc-wrapper {
   background: #1c1c1e !important; color: #e6e6e6 !important; border-color: #333 !important;
+}
+
+/* Homepage (gwm deck) — new grid layout wrappers */
+#gwm-Deck, #gwm-Deck-btf, [id^="gwm-Deck"], .gwm-u-blackjack-typography, #gw-content, .gw-content,
+#nav-shortcuts-container, #shortcut-menu, .nav-assistant, .shortcut-help-container, .shortcut-menu-section {
+  background-color: #121212 !important;
+  background-image: none !important;
+  color: #e6e6e6 !important;
+}
+#shortcut-menu a, #shortcut-menu .shortcut-menu-item { color: #e6e6e6 !important; }
+.gwm-navigation-right-button, .gwm-navigation-left-button { background-color: #e6e6e6 !important; }
+
+/* Amazon blends product images with the card bg via multiply — kills them on dark. Render normally instead. */
+img[class*="asin-image"], [class*="asin-metadata"], [class*="_npack"] img, [class*="_npack"] .a-section,
+.a-cardui img, .gw-card-layout img, .a-carousel-card img, [class*="fluid-image"] img,
+[style*="mix-blend-mode"] {
+  mix-blend-mode: normal !important;
+}
+
+/* Themed hero cards carry their own colour/artwork — don't paint over their insides */
+[class*="theming-card"] *:not(img):not(video):not(.a-button):not(.a-button-inner),
+.theming-card-background *:not(img):not(video):not(.a-button):not(.a-button-inner) {
+  background-color: transparent !important;
+}
+/* CSS-module card widgets (_single-creative-card_style_*, _npack-asin-card_style_*, …) overlay text on artwork */
+[class*="-card_style_"] .a-section, [class*="-card_share-style_"] .a-section, [class*="_card_style_"] .a-section,
+.theming-card-header, [class*="-card_style_"] .a-cardui-header, .gwm-window-tile .a-section, [class*="wd-backdrop"] .a-section, [class*="wd-backdrop"] .a-cardui-header {
+  background-color: transparent !important;
 }
