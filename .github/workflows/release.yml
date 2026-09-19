@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tag must match manifest version
+        id: ver
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          MANIFEST=$(node -p "require('./manifest.json').version")
+          if [ "$TAG" != "$MANIFEST" ]; then
+            echo "::error::tag v$TAG != manifest.json version $MANIFEST"; exit 1
+          fi
+          echo "version=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Package extension
+        run: |
+          zip -r "blindnt-${{ steps.ver.outputs.version }}.zip" \
+            manifest.json popup.html popup.css popup.js sites.js content.js icons sites \
+            -x '*.DS_Store'
+          unzip -l "blindnt-${{ steps.ver.outputs.version }}.zip"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: blindnt v${{ steps.ver.outputs.version }}
+          files: blindnt-${{ steps.ver.outputs.version }}.zip
+          generate_release_notes: true
+          body: |
+            **Install:** download the zip, unzip it, open `chrome://extensions`, enable *Developer mode*, click *Load unpacked* and pick the folder.

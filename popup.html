@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">◐</span>
+      <span class="name">blindnt</span>
+    </div>
+    <label class="switch big" title="Master switch">
+      <input type="checkbox" id="master">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <div id="status" class="status"></div>
+
+  <ul id="sites" class="sites"></ul>
+
+  <footer>Add sites in <code>sites.js</code> + <code>sites/&lt;id&gt;.css</code></footer>
+
+  <script src="sites.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate manifest.json
+        run: |
+          node -e "
+            const m = require('./manifest.json');
+            if (m.manifest_version !== 3) throw new Error('manifest_version must be 3');
+            if (!/^\d+\.\d+\.\d+$/.test(m.version)) throw new Error('version must be x.y.z');
+            for (const f of ['popup.html', 'sites.js', 'content.js', 'icons/16.png', 'icons/48.png', 'icons/128.png'])
+              require('fs').accessSync(f);
+            console.log('manifest ok, v' + m.version);
+          "
+
+      - name: Syntax-check scripts
+        run: for f in sites.js content.js popup.js; do node --check "$f"; done
+
+      - name: Every registered site has its CSS file
+        run: |
+          node -e "
+            const fs = require('fs');
+            const vm = require('vm');
+            const ctx = {};
+            vm.runInNewContext(fs.readFileSync('sites.js', 'utf8') + ';this.SITES = SITES;', ctx);
+            for (const s of ctx.SITES) {
+              if (!fs.existsSync(s.css)) throw new Error(s.id + ': missing ' + s.css);
+              console.log('ok', s.id, '->', s.css);
+            }
+          "

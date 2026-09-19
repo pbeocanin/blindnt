@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "blindnt",
+  "version": "0.1.0",
+  "description": "Hand-made dark mode for sites that refuse to have one.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "blindnt"
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["sites.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sites/*.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
