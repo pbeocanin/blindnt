@@ -63,3 +63,68 @@ chrome.storage.local.get(['enabled', 'sites'], (stored) => {
     render();
   });
 });
+
+// --- Page audit: find what's still light on the current tab, copy a report to the clipboard ---
+function auditPage() {
+  const lum = (c) => {
+    const m = c.match(/rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)/);
+    if (!m || (m[4] !== undefined && +m[4] === 0)) return null;
+    return 0.299 * m[1] + 0.587 * m[2] + 0.114 * m[3];
+  };
+  const sel = (el) => {
+    let s = el.tagName.toLowerCase();
+    if (el.id) s += '#' + el.id;
+    const cls = typeof el.className === 'string' ? el.className.trim().split(/\s+/).filter(Boolean) : [];
+    if (cls.length) s += '.' + cls.slice(0, 4).join('.');
+    return s;
+  };
+  const light = [], blend = [], gradients = [];
+  for (const el of document.querySelectorAll('body *')) {
+    if (el.tagName === 'IMG' || el.tagName === 'VIDEO' || el.tagName === 'SVG') continue;
+    const r = el.getBoundingClientRect();
+    const area = r.width * r.height;
+    if (area < 4000) continue;
+    const s = getComputedStyle(el);
+    const l = lum(s.backgroundColor);
+    if (l !== null && l > 140) {
+      light.push({ sel: sel(el), bg: s.backgroundColor, area: Math.round(area), inline: (el.getAttribute('style') || '').slice(0, 80) });
+    }
+    if (s.backgroundImage.includes('gradient')) gradients.push({ sel: sel(el), bgi: s.backgroundImage.slice(0, 90), area: Math.round(area) });
+    if (s.mixBlendMode !== 'normal') blend.push({ sel: sel(el), mode: s.mixBlendMode });
+  }
+  light.sort((a, b) => b.area - a.area);
+  gradients.sort((a, b) => b.area - a.area);
+  const lines = [`# blindnt audit — ${location.href}`, `viewport ${innerWidth}x${innerHeight}, scrollY ${Math.round(scrollY)}`, ''];
+  lines.push(`## light backgrounds (${light.length})`);
+  for (const x of light.slice(0, 40)) lines.push(`${x.sel} | ${x.bg} | ${x.area}px²${x.inline ? ' | style="' + x.inline + '"' : ''}`);
+  lines.push('', `## gradients (${gradients.length})`);
+  for (const x of gradients.slice(0, 15)) lines.push(`${x.sel} | ${x.bgi}`);
+  lines.push('', `## mix-blend-mode (${blend.length})`);
+  for (const x of blend.slice(0, 15)) lines.push(`${x.sel} | ${x.mode}`);
+  return lines.join('\n');
+}
+
+const auditBtn = document.getElementById('audit');
+const auditMsg = document.getElementById('audit-msg');
+const auditOut = document.getElementById('audit-out');
+
+auditBtn.addEventListener('click', async () => {
+  auditMsg.textContent = 'scanning…';
+  try {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const [{ result }] = await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: auditPage });
+    auditOut.value = result;
+    auditOut.hidden = false;
+    try {
+      await navigator.clipboard.writeText(result);
+      auditMsg.textContent = 'copied to clipboard';
+    } catch {
+      auditOut.select();
+      auditMsg.textContent = 'select + copy below';
+    }
+  } catch (e) {
+    auditMsg.textContent = 'cannot scan this page';
+    auditOut.value = String(e);
+    auditOut.hidden = false;
+  }
+});

@@ -77,3 +77,16 @@ code { font-family: ui-monospace, monospace; font-size: 10.5px; color: #c7c7cc; 
 .switch input:checked + .slider { background: var(--accent); }
 .switch input:checked + .slider::before { transform: translateX(16px); }
 .switch.big input:checked + .slider::before { transform: translateX(20px); }
+
+.tools { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-top: 1px solid var(--border); }
+.tools button {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 5px 10px; font: inherit; font-size: 12px; cursor: pointer;
+}
+.tools button:hover { border-color: var(--accent); }
+.muted { color: var(--muted); font-size: 11px; }
+#audit-out {
+  width: calc(100% - 28px); margin: 0 14px 8px; height: 110px;
+  background: #0e0e0e; color: #c7c7cc; border: 1px solid var(--border); border-radius: 6px;
+  font: 10.5px/1.35 ui-monospace, monospace; resize: vertical;
+}

@@ -217,8 +217,17 @@ tr:nth-child(even) td, .a-keyvalue tr:nth-child(even) td { background-color: #1a
 /* Nav (already dark) — fix the light parts */
 #nav-subnav, #nav-progressive-subnav { background: #232f3e !important; }
 #nav-subnav .nav-a { background: transparent !important; color: #fff !important; }
-#nav-search-bar-form, .nav-search-field input { background: #242426 !important; color: #e6e6e6 !important; }
-.nav-search-dropdown, #searchDropdownBox { background: #242426 !important; color: #e6e6e6 !important; }
+#nav-search-bar-form, .nav-search-field, .nav-search-field input, .nav-search-field .nav-input,
+#twotabsearchtextbox { background: #242426 !important; color: #e6e6e6 !important; border: 0 !important; box-shadow: none !important; }
+#nav-search-bar-form { border: 1px solid #444 !important; border-radius: 8px; overflow: hidden; }
+#nav-search-bar-form:focus-within { border-color: #f5a623 !important; }
+.nav-search-field input::placeholder { color: #8e8e93 !important; }
+.nav-search-scope, .nav-search-dropdown, #searchDropdownBox, .nav-search-label, .nav-search-facade {
+  background: #2f2f31 !important; color: #e6e6e6 !important; border: 0 !important; box-shadow: none !important;
+}
+.nav-search-scope { border-right: 1px solid #444 !important; }
+.nav-search-scope .nav-search-label { color: #e6e6e6 !important; }
+.nav-search-submit, .nav-search-submit-text, #nav-search-submit-button { border: 0 !important; }
 #nav-flyout-searchAjax, .s-suggestion, .s-suggestion-container, .s-suggestion-ellipsis-direction,
 #issDesktop, .left-pane-results-container, .left-pane-results-container .s-suggestion {
   background: #1c1c1e !important; color: #e6e6e6 !important;
@@ -277,7 +286,10 @@ tr:nth-child(even) td, .a-keyvalue tr:nth-child(even) td { background-color: #1a
 
 /* Homepage (gwm deck) — new grid layout wrappers */
 #gwm-Deck, #gwm-Deck-btf, [id^="gwm-Deck"], .gwm-u-blackjack-typography, #gw-content, .gw-content,
-#nav-shortcuts-container, #shortcut-menu, .nav-assistant, .shortcut-help-container, .shortcut-menu-section {
+#nav-shortcuts-container, #shortcut-menu, .nav-assistant, .shortcut-help-container, .shortcut-menu-section,
+#gw-container, .gw-container, #gwm-container, [id^="gwm-"], [class^="gwm-u-"], .gw-desktop-rhf, #gw-desktop-rhf,
+#desktop-grid-container, #desktop-grid-wrapper, #dp-desktop-grid, .a-container.gw-col, #gw-desktop-herotator,
+#a-page > div:not([class]):not([id]), .gw-page-container, #gwm-hero, .gwm-hero {
   background-color: #121212 !important;
   background-image: none !important;
   color: #e6e6e6 !important;
