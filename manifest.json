@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "blindnt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Hand-made dark mode for sites that refuse to have one.",
   "permissions": ["storage", "activeTab", "scripting"],
   "action": {

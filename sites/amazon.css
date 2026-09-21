@@ -314,3 +314,22 @@ img[class*="asin-image"], [class*="asin-metadata"], [class*="_npack"] img, [clas
 .theming-card-header, [class*="-card_style_"] .a-cardui-header, .gwm-window-tile .a-section, [class*="wd-backdrop"] .a-section, [class*="wd-backdrop"] .a-cardui-header {
   background-color: transparent !important;
 }
+
+/* Logged-in homepage (from user audit): mosaic wrapper, tile backings, Rufus panel */
+[class*="hp-mosaic-container"], [class*="hp-mosaic-container_style_container"], [class*="hp-mosaic-container_desktopStyles"],
+[class*="dram-slot-"] {
+  background-color: #121212 !important;
+  background-image: none !important;
+}
+li.gwm-tile, .gwm-tile, .gwm-tile > .a-list-item, .gwm-tile .a-cardui {
+  background-color: #1c1c1e !important;
+  border-color: #333 !important;
+}
+#nav-flyout-rufus, #nav-rufus-content, .rufus-panel-container, .nav-rufus-content, .rufus-dockable,
+#rufus-panel-header-container, .rufus-panel-header-container, [id^="rufus-panel"], [class^="rufus-panel"],
+[class*="rufus-"] .a-section, [class*="rufus-"] .a-box, [class*="rufus-"] .a-box-inner {
+  background-color: #1c1c1e !important;
+  color: #e6e6e6 !important;
+  border-color: #333 !important;
+}
+[class*="rufus-"] input, [class*="rufus-"] textarea { background-color: #242426 !important; color: #e6e6e6 !important; }
